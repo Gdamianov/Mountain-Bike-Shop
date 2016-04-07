@@ -1,0 +1,12 @@
+﻿/*ADD BY ID*/
+.detailedAdd{
+    width:700px;
+    height:500px;
+    margin:0 auto;
+    
+
+         
+}
+.detailedAdd h1, .detailedAdd h2,.detailedAdd h3,.detailedAdd h4,.detailedAdd p{
+    text-align:center
+}

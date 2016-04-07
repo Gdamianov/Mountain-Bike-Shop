@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MountainBikeShop.Web.Models.ViewModels.BikeViewModel>
+@if (!Model.Any())
+{
+    <h3>There are no adds with that critery</h3>
+}
+
+@foreach (var bikeAdd in Model)
+{
+    <div class="searchAdd">
+        <header>
+            <h1>@bikeAdd.Brand @bikeAdd.Model</h1>
+            <h2>Price: @bikeAdd.Price &#36 @Html.ActionLink("More details", "Add", "Bikes", new { id = bikeAdd.Id }, new { @class = "btn btn-primary" })</h2>
+            
+        </header>
+    </div>
+}
+
+
+
+

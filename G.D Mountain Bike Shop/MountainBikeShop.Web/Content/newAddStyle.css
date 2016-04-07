@@ -1,0 +1,29 @@
+﻿.new-add{
+    width:450px;
+    height:600px;
+    margin:0 auto;
+}
+.new-add h1{
+    text-align:center;
+}
+.new-add form{
+    margin-top:50px;
+    
+}
+.new-add label{
+    width:100%;
+    font-size:20px;
+    text-align:center;
+    
+}
+.new-add input{
+    width:100%;
+    display: block;
+    margin:0 auto;
+}
+.new-add textarea{
+    width:100%;
+    height:50px;
+    display:block;
+    margin:0 auto;
+}

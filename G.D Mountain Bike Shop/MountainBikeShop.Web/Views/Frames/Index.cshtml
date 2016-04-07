@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MountainBikeShop.Web.Models.ViewModels.BikeViewModel>
+<div class="adds-index">
+    
+    
+    <h1>Frame adds @Html.ActionLink("New Add", "NewAdd", "Frames", new { @class = "btn btn-primary" })</h1>
+    
+    <div class="adds-container">
+        
+    </div>
+    <div class="searchSidebar">
+        <p>Search frames</p>
+        @using (Ajax.BeginForm("Search", "Frames",
+                                            new AjaxOptions
+                                            {
+                                                UpdateTargetId = "resultFrames",
+                                                InsertionMode = InsertionMode.Replace,
+                                                HttpMethod = "POST"
+                                            }, new { @class = "searchForm" }))
+        {
+            <input type="text" name="query" class="searchInput" />
+            <input type="submit" class="saerchSubmit" />
+        }
+        <div id="resultFrames"></div>
+    </div>
+
+    @section scripts{
+        @Scripts.Render("~/bundles/requester")
+        @Scripts.Render("~/bundles/loadAllFrameAdds")
+    }
+</div>

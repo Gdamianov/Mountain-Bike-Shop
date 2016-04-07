@@ -1,0 +1,34 @@
+﻿.adds-index{
+    width:1140px;
+    height: 1160px;
+    margin: 0 auto;
+    box-shadow: 10px 10px 5px #888888;
+    
+}
+.adds-index > h1{
+    text-align:center;
+}
+
+.adds-container{
+    width:700px;
+    height:1040px;
+    float:left;
+    margin-top:50px;
+    overflow:scroll;
+    overflow-x: hidden;
+    
+}
+
+.add{
+    width:500px;
+    height:190px;
+    margin:0 auto;
+    box-shadow: 10px 10px 5px #888888;
+    border-radius:10px;
+    margin-top:15px;
+}
+.add h1, .add h2, .add p{
+    text-align:center;
+    overflow:hidden;
+}
+

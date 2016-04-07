@@ -1,0 +1,9 @@
+﻿@model IEnumerable<MounrainBikeShop.Models.MountainBikeAdd>
+@foreach (var bikeAdd in Model)
+{
+    <div class="bike-add">
+        <p><h1>@bikeAdd.Brand</h1></p>
+        <p><h2>@bikeAdd.Model</h2></p>
+        <p><h2>@bikeAdd.Price</h2></p>
+    </div>
+}

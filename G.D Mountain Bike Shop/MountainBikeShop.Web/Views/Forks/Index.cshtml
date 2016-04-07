@@ -1,0 +1,31 @@
+﻿<div class="adds-index">
+    
+    <h1>
+        Fork adds @Html.ActionLink("New Add", "NewAdd", "Forks",
+     new { @class = "btn btn-primary" })
+    </h1>
+
+        <div class="adds-container"></div>
+
+    
+
+    
+    <div class="searchSidebar">
+        <p>Search forks</p>
+        @using (Ajax.BeginForm("Search", "Forks",
+                                                    new AjaxOptions
+                                                    {
+                                                        UpdateTargetId = "resultForks",
+                                                        InsertionMode = InsertionMode.Replace,
+                                                        HttpMethod = "POST"
+                                                    }, new { @class = "searchForm" }))
+        {
+            <input type="text" name="query" class="searchInput" />
+            <input type="submit" class="saerchSubmit" />
+        }
+        <div id="resultForks"></div>
+    </div>
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/loadAllForkAdds");'
+}

@@ -1,0 +1,35 @@
+﻿.myAdds{
+    width:1300px;
+    height:1100px;
+    display:block;
+    margin:0 auto;
+    
+}
+.myAdds > h1, .myAdd > section > h1{
+    text-align:center;
+}
+.myAdds > section{
+    width:380px;
+    height:1000px;
+    display:inline-block;
+    overflow:scroll;
+    overflow-x: hidden;
+    margin-left:10px;
+    
+    
+    
+}
+.myAdd{
+    
+    width:335px;
+    margin-top:10px;
+    border-radius:10px;
+    box-shadow: 10px 10px 5px #888888;
+    border-radius:5px;
+}
+
+.myAdd h1, .myAdd h2, .myAdd p {
+    text-align:center;
+    font-size:20px;
+}
+

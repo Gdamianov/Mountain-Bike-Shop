@@ -1,0 +1,40 @@
+﻿
+@model IEnumerable<MountainBikeShop.Web.Models.ViewModels.BikeViewModel>
+<div class="adds-index">
+    <h1>Mountain bike adds @Html.ActionLink("New Add", "NewAdd", "Bikes", new { @class = "btn btn-primary" })</h1>
+    
+        <div class="adds-container">
+            
+            @foreach (var bikeAdd in Model)
+            {
+                <div class="add">
+                    <header>
+                        <h1>@bikeAdd.Brand @bikeAdd.Model</h1>
+                    </header>
+                    <sction>
+                        <h2>Price: @bikeAdd.Price &#36</h2>
+                        <p>Posted on: @bikeAdd.PostedOn     <span>by: <span class="glyphicon glyphicon-user" aria-hidden="true"></span> @bikeAdd.Username</span></p>
+                        <p class="moreDetails">@Html.ActionLink("More Details", "Add", "Bikes", new { id = bikeAdd.Id }, new { @class = "btn btn-info" })</p>
+                    </sction>
+                </div>
+            }
+           
+        </div>
+        
+    <div class="searchSidebar">
+        <p>Search bikes</p>
+        @using (Ajax.BeginForm("Search", "Bikes",
+                                        new AjaxOptions
+                                        {
+                                            UpdateTargetId = "resultBikes",
+                                            InsertionMode = InsertionMode.Replace,
+                                            HttpMethod = "POST"
+                                        }, new { @class = "searchForm" }))
+        {
+            <input type="text" name="query" class="searchInput" />
+            <input type="submit" class="saerchSubmit" />
+        }
+        <div id="resultBikes"></div>
+    </div>
+</div>
+

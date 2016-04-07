@@ -1,0 +1,80 @@
+﻿@model MountainBikeShop.Web.Models.ViewModels.MyAddsViewModel
+<div class="myAdds">
+    <h1>My Adds</h1>
+    <section>
+        <h1>My bike adds</h1>
+        @if (!Model.MyBikeAdds.Any())
+        {
+            <h1>You didn't have such adds.</h1>
+        }
+        @foreach (var bikeAdd in Model.MyBikeAdds)
+            {
+            <div class="myAdd">
+                <header>
+                    <h1>@bikeAdd.Brand @bikeAdd.Model</h1>
+                </header>
+                <section>
+                    <h2>Price: @bikeAdd.Price &#36</h2>
+                    
+                    <p class="moreDetails">
+                        @Html.ActionLink("More Details", "Add", "Bikes", new { id = bikeAdd.Id }, new { @class = "btn btn-info" })
+                       
+                        @Html.ActionLink("Delete", "Delete", "Bikes", new { id = bikeAdd.Id }, new { @class = "btn btn-danger" })
+                    
+                    </p>
+                </section>
+            </div>
+        }
+    </section>
+    <section>
+        <h1>My Forks adds</h1>
+        @if (!Model.MyForkAdds.Any())
+        {
+            <h1>You didn't have such adds.</h1>
+        }
+        @foreach (var forkAdd in Model.MyForkAdds)
+            {
+            <div class="myAdd">
+                <header>
+                    <h1>@forkAdd.Brand @forkAdd.Model</h1>
+                </header>
+                <section>
+                    <h2>Price: @forkAdd.Price &#36</h2>
+
+                    <p class="moreDetails">
+                        @Html.ActionLink("More Details", "Add", "Forks", new { id = forkAdd.Id }, new { @class = "btn btn-info" })
+                       
+                        @Html.ActionLink("Delete", "Delete", "Forks", new { id = forkAdd.Id }, new { @class = "btn btn-danger" })
+
+                    </p>
+                </section>
+            </div>
+        }
+    </section>
+    <section>
+        <h1>My Frame adds</h1>
+        @if (!Model.MyFrameAdds.Any())
+        {
+            <h1>You didn't have such adds.</h1>
+        }
+        @foreach (var frameAdd in Model.MyFrameAdds)
+            {
+            <div class="myAdd">
+                <header>
+                    <h1>@frameAdd.Brand @frameAdd.Model</h1>
+                </header>
+                <section>
+                    <h2>Price: @frameAdd.Price &#36</h2>
+
+                    <p class="moreDetails">
+                        @Html.ActionLink("More Details", "Add", "Frames", new { id = frameAdd.Id }, new { @class = "btn btn-info" })
+                       
+                        @Html.ActionLink("Delete", "Delete", "Frames", new { id = frameAdd.Id }, new { @class = "btn btn-danger" })
+
+                    </p>
+                </section>
+            </div>
+        }
+    </section>
+</div>
+

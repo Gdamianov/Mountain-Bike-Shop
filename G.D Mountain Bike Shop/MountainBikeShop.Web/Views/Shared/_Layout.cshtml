@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G.D Mountain Bike shop</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("G.D Mountain Bike Shop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @if (this.User.Identity.IsAuthenticated)
+                {
+                    @Html.ActionLink("My Adds", "Index", "MyAdds", new { area = "" }, new { @class = "navbar-brand" })
+                }
+                @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "navbar-brand" })
+               
+            </div>
+            <div class="navbar-collapse collapse">
+                
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <header>
+        <!-- TO DO LOGO -->
+        <div class="container">
+
+            <div class="row">
+                <div class="box">
+                    <div class="col-lg-12 text-center">
+                        <div id="carousel-example-generic" class="carousel slide">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators hidden-xs">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="img-responsive img-full" src="~/Resources/Images/dh.jpg" alt="" width="1140" height="480" >
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive img-full" src="~/Resources/Images/shop.jpg" alt="" width="1140" height="480">
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive img-full" src="~/Resources/Images/frame.jpg" alt=""width="1140" height="480" >
+                                </div>
+                                <div class="item">
+                                    <img class="img-responsive img-full" src="~/Resources/Images/fork.jpg" alt=""width="1140" height="480" >
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="icon-prev"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="icon-next"></span>
+                            </a>
+                        </div>
+                        <h2 class="brand-before">
+                            <small>Welcome to</small>
+                        </h2>
+                        <h1 class="brand-name">G.D Mountain Bike Shop</h1>
+                        <hr class="tagline-divider">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            <div id="home-menu">
+            
+                <ul>
+                    <li>@Html.ActionLink("Mountain Bikes", "Index", "Bikes")</li>
+                    <li>
+                        @Html.ActionLink("Forks", "Index", "Forks")
+                    </li>
+                    <li>@Html.ActionLink("Frames", "Index", "Frames")</li>
+                    
+                </ul>
+        </div> 
+</header> 
+    <section>
+       
+    </section>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        
+    </div>
+    
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <h3>G.D<span>Mountain Bike Shop</span></h3>
+
+            <p class="footer-links">
+                @Html.ActionLink("Home","Index","Home")
+                ·
+                @Html.ActionLink("Bikes", "Index", "Bikes")
+                ·
+                @Html.ActionLink("Frames", "Index", "Frames")
+                ·
+                @Html.ActionLink("Forks", "Index", "Forks")
+                ·
+                @Html.ActionLink("About", "About", "Home")
+                ·
+                @Html.ActionLink("Contact", "Contact", "Home")
+            </p>
+
+            <p class="footer-company-name">G.D Mountain Bike Shop &copy; 2015</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>54 Belomorska Street</span> Chepelare, Bulgaria</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+1 555 123456</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p>@Html.ActionLink("gd@Bikes.bg","","")</p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>About the shop</span>
+                Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
+                vehicula sit amet.
+            </p>
+
+            
+
+        </div>
+
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/q")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/notify")
+    @Scripts.Render("~/bundles/unobtrusive-ajax");
+    @RenderSection("scripts", required: false)
+</body>
+</html>
